@@ -36,12 +36,12 @@ pipeline {
         // Currently i am using docker hub registry
         REGISTRY_URL = "docker.io"
         // later u changed to jfrog ====> jfrog.hsbc.com
-        IMAGE_REPOSITORY = "devopswithcloudhub/i27-helpdesk-ui"
+        IMAGE_REPOSITORY = "muralidhar413/i27-helpdesk-ui"
         // calling my docker creds into a variable
         REGISTRY_CREDENTIALS_ID = credentials('docker-credentials')
 
-        // docker.io/devopswithcloudhub/i27-helpdesk-ui:tagname
-        // docker.io/devopswithcloudhub/i27-helpdesk-ui:84285da
+        // docker.io/muralidhar413/i27-helpdesk-ui:tagname
+        // docker.io/muralidhar413/i27-helpdesk-ui:84285da
 
         // Kubernetes Dev Cluster Details 
         DEV_CLUSTER_NAME = "np-cluster"
@@ -80,7 +80,7 @@ pipeline {
                 // Setting the gateway url on the TARGET_ENV selection
                 switch(params.TARGET_ENV)  {
                     case 'dev': 
-                        env.NEXT_PUBLIC_API_BASE_URL = 'http://34.9.152.246:8080'
+                        env.NEXT_PUBLIC_API_BASE_URL = 'http://35.224.15.214:8080'
                         break
                     case 'test': 
                         env.NEXT_PUBLIC_API_BASE_URL = 'http://test-gateway.i27helpdesk.in'
